@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+dist/
+.env
+.env.*
+*.log
+*.wav
+*.png
+*.sqlite
+*.db
+__pycache__/
