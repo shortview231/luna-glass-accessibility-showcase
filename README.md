@@ -1,6 +1,6 @@
 # Luna Glass Accessibility Showcase
 
-Luna Glass is a local-first accessibility assistant project built inside Lucid_Vision. It is designed for a legally blind user who needs a dependable screen-reading and voice-assistance workflow that stays private, free, and offline.
+Luna Glass is a local-first accessibility assistant project built inside Lucid_Vision. It is designed for low-vision and screen-fatigue workflows that need dependable screen reading and voice assistance while staying private, free, and offline.
 
 This repository is a public-facing portfolio summary. It does not include private audio, screenshots, credentials, databases, or the full private app source.
 
@@ -19,7 +19,7 @@ This repository is a public-facing portfolio summary. It does not include privat
 
 ## User Problem
 
-The user is legally blind and needs a tool that can:
+The accessibility workflow needs a tool that can:
 
 - Read what is near the mouse pointer.
 - Read the whole monitor when zoom makes context hard.
@@ -87,4 +87,4 @@ Luna Glass is designed around strict boundaries:
 
 ## Suggested Portfolio Description
 
-Luna Glass is a fully local accessibility assistant prototype that combines pointer-aware OCR, Linux accessibility APIs, local speech recognition, and offline text-to-speech to help a legally blind user read and understand screen context without cloud services.
+Luna Glass is a fully local accessibility assistant prototype that combines pointer-aware OCR, Linux accessibility APIs, local speech recognition, and offline text-to-speech to help low-vision users read and understand screen context without cloud services.
