@@ -6,7 +6,7 @@ Luna Glass Accessibility Assistant
 
 ## Short Description
 
-Built a local-first accessibility assistant prototype that reads around the pointer, reads full monitors by voice command, uses Piper and Vosk for offline speech, and combines AT-SPI with Tesseract OCR for private screen understanding.
+Built a local-first accessibility assistant prototype that reads around the pointer, reads full monitors by voice command, uses Piper and Vosk for offline speech, and combines AT-SPI with Tesseract OCR for private screen reading. Current engineering work is focused on reliable contextual explanation without cloud services.
 
 ## Tags
 
@@ -22,5 +22,5 @@ Built a local-first accessibility assistant prototype that reads around the poin
 
 ## Links To Add Later
 
-- GitHub repo: pending remote creation
-- Live GitHub Pages showcase: pending publish
+- GitHub repo: https://github.com/shortview231/luna-glass-accessibility-showcase
+- Live GitHub Pages showcase: https://shortview231.github.io/luna-glass-accessibility-showcase/

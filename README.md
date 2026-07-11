@@ -16,6 +16,7 @@ This repository is a public-facing portfolio summary. It does not include privat
 - Push-to-talk voice workflow.
 - Immediate stop/cancel workflow.
 - Privacy-first cleanup of temporary audio and capture files.
+- Local explanation groundwork with source diagnostics.
 
 ## User Problem
 
@@ -50,6 +51,7 @@ Working capabilities:
 Current known limitation:
 
 - Highlighted-text reading is implemented but still unreliable in some Linux applications because selected text is not always exposed consistently through AT-SPI.
+- Contextual explanation is not yet accepted as reliable. The reader can read visible text, but broad "explain what I see" commands still need a capture-source and local vision audit because the current explainer is primarily text-context based.
 
 ## Local Technology Stack
 
@@ -80,10 +82,11 @@ Luna Glass is designed around strict boundaries:
 
 1. Stabilize pointer and full-screen reading.
 2. Improve highlighted-text reliability.
-3. Add local contextual explanations.
-4. Improve natural Luna voice quality while staying free/offline.
-5. Add read-only error detection.
-6. Add approval-gated corrective actions later.
+3. Complete the live context-capture audit for explanation commands.
+4. Evaluate local image understanding for visual explanation while staying free/offline.
+5. Improve natural Luna voice quality while staying free/offline.
+6. Add read-only error detection.
+7. Add approval-gated corrective actions later.
 
 ## Suggested Portfolio Description
 

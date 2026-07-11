@@ -37,3 +37,5 @@ The system is designed to keep sensitive data local:
 Pointer and full-screen reading are the strongest current paths.
 
 Highlighted text is the most important near-term reliability gap because Linux applications vary in how they expose selected text through accessibility APIs.
+
+Contextual explanation is currently diagnostic groundwork, not an accepted visual-understanding feature. The implementation can route spoken explanation requests and collect text context from accessibility, OCR, and application surfaces, but live testing still shows that broad "explain what I see" commands may receive no usable visual context. The next engineering step is a runtime capture audit that verifies DOM text, AT-SPI text, OCR text, screenshot pixels, display coordinates, and window containment before deciding whether a local image-understanding adapter is required.
