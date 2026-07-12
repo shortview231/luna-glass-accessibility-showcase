@@ -53,6 +53,14 @@ Working capabilities:
 - Selected-region visual explanation through local Ollama/LLaVA.
 - Local OCR fallback.
 
+## First Demo Video
+
+The live showcase includes a first working demo clip:
+
+- `assets/video/luna-glass-first-demo-2026-07-12.mp4`
+
+This is an early proof recording, not a polished product video. It demonstrates the core loop of speaking to Luna, having Luna process local screen context, and receiving a spoken answer. Known presentation limits: the audio is quiet, and the recording does not clearly show the dimmed selection overlay or drag-select action that was visible during local use.
+
 Current known limitation:
 
 - Highlighted-text reading is implemented but still unreliable in some Linux applications because selected text is not always exposed consistently through AT-SPI.

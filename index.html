@@ -28,6 +28,9 @@
     .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
     .chip { border:1px solid var(--line); border-radius:999px; padding:7px 10px; color:#dbffef; background:#0c1a14; font-size:14px; }
     .summary { border-left:3px solid var(--accent); padding-left:16px; max-width:860px; }
+    .demo-panel { overflow:hidden; border:1px solid var(--line); border-radius:16px; background:#081710; margin-top:18px; }
+    .demo-panel video { width:100%; background:#000; }
+    .demo-note { margin:0; padding:14px 16px; border-top:1px solid var(--line); color:var(--muted); font-size:15px; line-height:1.55; }
   </style>
 </head>
 <body>
@@ -48,6 +51,20 @@
     <section class="section summary">
       <h2>Problem</h2>
       <p>Standard screen readers and magnification tools do not always match low-vision workflows where the user needs quick context around the pointer, whole-screen summaries, and spoken help without sending screen content to a cloud service.</p>
+    </section>
+
+    <section class="section" id="first-demo">
+      <h2>First Working Demo</h2>
+      <p>This early recording shows Luna Glass being spoken to and answering back from local screen context. It is intentionally presented as a first demo rather than a polished product video.</p>
+      <div class="demo-panel">
+        <video controls preload="metadata" aria-label="First Luna Glass demo showing voice interaction and local accessibility response">
+          <source src="assets/video/luna-glass-first-demo-2026-07-12.mp4" type="video/mp4">
+          Your browser does not support the video element.
+        </video>
+        <p class="demo-note">
+          Demo note: the audio is quiet, and the recording does not clearly show the dimmed selection overlay or drag-select action that was visible locally during use. The value of this clip is that it shows the working loop: the user asks Luna for help, Luna processes local screen context, and Luna responds conversationally.
+        </p>
+      </div>
     </section>
 
     <section class="section">

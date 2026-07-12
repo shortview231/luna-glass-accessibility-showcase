@@ -45,3 +45,9 @@ Highlighted text is the most important near-term reliability gap because Linux a
 Selected-region visual explanation is now working locally through Ollama/LLaVA. The strongest explanation path is manual region selection because it gives Luna a precise target and avoids noisy full-screen context.
 
 The remaining reliability work is representative-app validation. Luna can still misclassify unfamiliar software or infer incorrectly from visual context, so the system reports uncertainty and keeps action automation out of scope. Broad full-screen explanation remains less dependable than selected-region explanation because full-screen captures can include mixed windows, sidebars, media, and unrelated text.
+
+## Demo Evidence
+
+The showcase includes `assets/video/luna-glass-first-demo-2026-07-12.mp4` as a first working demo of the voice-to-context-to-spoken-response loop.
+
+The clip is intentionally labeled as an early demo because it has presentation limitations: audio is quiet, and the screen recording does not clearly capture the dimmed drag-selection overlay that appears during local use. The engineering value is the demonstrated interaction loop, not production video polish.
