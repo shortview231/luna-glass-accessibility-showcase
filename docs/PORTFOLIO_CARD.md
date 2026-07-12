@@ -6,7 +6,7 @@ Luna Glass Accessibility Assistant
 
 ## Short Description
 
-Built a local-first accessibility assistant prototype that reads around the pointer, reads full monitors by voice command, uses Piper and Vosk for offline speech, and combines AT-SPI with Tesseract OCR for private screen reading. Current engineering work is focused on reliable contextual explanation without cloud services.
+Built a local-first accessibility assistant prototype that reads around the pointer, reads full monitors by voice command, uses Piper and Vosk for offline speech, and combines AT-SPI, Tesseract OCR, and local Ollama/LLaVA visual explanation for private screen assistance. Current engineering work is focused on hardening selected-region explanation across more real applications without cloud services.
 
 ## Tags
 
@@ -16,6 +16,8 @@ Built a local-first accessibility assistant prototype that reads around the poin
 - Tesseract
 - Piper TTS
 - Vosk STT
+- Ollama
+- LLaVA
 - Linux
 - AT-SPI
 - Local-first AI

@@ -16,7 +16,9 @@ This repository is a public-facing portfolio summary. It does not include privat
 - Push-to-talk voice workflow.
 - Immediate stop/cancel workflow.
 - Privacy-first cleanup of temporary audio and capture files.
-- Local explanation groundwork with source diagnostics.
+- Drag-to-select context targeting for precise screen regions.
+- Local visual explanation using an offline Ollama/LLaVA model when OCR is not enough.
+- Local explanation diagnostics that distinguish OCR, semantic text, and image context.
 
 ## User Problem
 
@@ -26,6 +28,7 @@ The accessibility workflow needs a tool that can:
 - Read the whole monitor when zoom makes context hard.
 - Read highlighted text.
 - Explain visible UI in plain language.
+- Describe selected visual regions when text extraction is not enough.
 - Eventually identify likely errors in spreadsheets or forms.
 - Eventually perform corrections only after explicit approval.
 
@@ -46,18 +49,22 @@ Working capabilities:
 - Vosk microphone transcription.
 - Visible listening indicator.
 - Visible pointer-region overlay.
+- Manual drag-to-select region capture.
+- Selected-region visual explanation through local Ollama/LLaVA.
 - Local OCR fallback.
 
 Current known limitation:
 
 - Highlighted-text reading is implemented but still unreliable in some Linux applications because selected text is not always exposed consistently through AT-SPI.
-- Contextual explanation is not yet accepted as reliable. The reader can read visible text, but broad "explain what I see" commands still need a capture-source and local vision audit because the current explainer is primarily text-context based.
+- Selected-region visual explanation is now working locally, but accuracy is still being validated across more apps, screens, and image types. Luna reports what it can observe and may still misclassify unfamiliar applications.
+- Broad full-screen explanation remains less dependable than selected-region explanation because full-screen capture can include too much mixed context.
 
 ## Local Technology Stack
 
 - Electron
 - React
 - Tesseract OCR
+- Ollama / LLaVA local vision model
 - AT-SPI / pyatspi
 - Piper TTS
 - Vosk STT
@@ -82,8 +89,8 @@ Luna Glass is designed around strict boundaries:
 
 1. Stabilize pointer and full-screen reading.
 2. Improve highlighted-text reliability.
-3. Complete the live context-capture audit for explanation commands.
-4. Evaluate local image understanding for visual explanation while staying free/offline.
+3. Expand selected-region visual explanation validation across browsers, Electron apps, media frames, documents, and spreadsheets.
+4. Improve explanation accuracy and source diagnostics while staying free/offline.
 5. Improve natural Luna voice quality while staying free/offline.
 6. Add read-only error detection.
 7. Add approval-gated corrective actions later.

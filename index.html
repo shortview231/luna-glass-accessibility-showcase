@@ -41,8 +41,8 @@
     <section class="grid">
       <div class="card"><strong>Pointer Reading</strong><p>Reads the screen region around the pointer with a visible high-contrast box and local OCR fallback.</p></div>
       <div class="card"><strong>Voice Commands</strong><p>Uses <code>Ctrl+Alt+M</code> for bounded push-to-talk commands through local Vosk speech recognition.</p></div>
+      <div class="card"><strong>Visual Explanation</strong><p>Drag-selects a region and explains visible content locally with Ollama/LLaVA when OCR is not enough.</p></div>
       <div class="card"><strong>Offline Speech</strong><p>Speaks results locally with Piper TTS and supports immediate stop/cancel behavior.</p></div>
-      <div class="card"><strong>Privacy Boundary</strong><p>No paid APIs, no cloud OCR, no continuous microphone, and no autonomous actions.</p></div>
     </section>
 
     <section class="section summary">
@@ -52,11 +52,12 @@
 
     <section class="section">
       <h2>Solution</h2>
-      <p>Luna Glass combines pointer-aware capture, Linux accessibility APIs, local OCR, local speech recognition, and offline text-to-speech into a bounded assistant workflow. The current accepted strength is dependable reading; contextual explanation is being hardened so Luna can report what it actually captured instead of guessing.</p>
+      <p>Luna Glass combines pointer-aware capture, drag-selected screen regions, Linux accessibility APIs, local OCR, local speech recognition, offline text-to-speech, and a local vision model into a bounded assistant workflow. The current accepted strength is dependable reading, with selected-region visual explanation now working locally and being validated across more real applications.</p>
       <div class="flow">
         <div class="node"><span>Input</span>Hotkey or push-to-talk voice command.</div>
-        <div class="node"><span>Target</span>Pointer region, current monitor, or focused app context.</div>
+        <div class="node"><span>Target</span>Pointer region, current monitor, highlighted text, or drag-selected region.</div>
         <div class="node"><span>Read</span>AT-SPI semantic text first, OCR fallback when needed.</div>
+        <div class="node"><span>Explain</span>Local Ollama/LLaVA visual fallback for selected regions when text extraction is weak.</div>
         <div class="node"><span>Speak</span>Local Piper voice output with stop/cancel support.</div>
         <div class="node"><span>Cleanup</span>Temporary captures and audio are cleaned by default.</div>
       </div>
@@ -69,6 +70,7 @@
         <div class="node"><span>Electron</span>Global shortcuts, screen capture, overlays, and audio orchestration.</div>
         <div class="node"><span>AT-SPI</span>Semantic app/control inspection for accessible text.</div>
         <div class="node"><span>Tesseract</span>Local OCR when semantic text is missing or incomplete.</div>
+        <div class="node"><span>Ollama/LLaVA</span>Local visual explanation for selected screen regions.</div>
         <div class="node"><span>Vosk</span>Offline speech-to-text for push-to-talk commands.</div>
         <div class="node"><span>Piper</span>Offline text-to-speech for spoken responses.</div>
       </div>
@@ -81,8 +83,10 @@
         <li><code>Ctrl+Alt+M</code>: voice command / push-to-talk.</li>
         <li><code>Ctrl+Alt+R</code>: repeat last reading.</li>
         <li><code>Ctrl+Alt+X</code>: stop or cancel.</li>
+        <li><code>Ctrl+Shift+S</code>: drag-select a region for read, explain, or summarize follow-up.</li>
         <li>Full-screen monitor reading by spoken request.</li>
         <li>Visible high-contrast region box for predictable pointer reading.</li>
+        <li>Selected-region visual explanation with a local LLaVA model when OCR is insufficient.</li>
       </ul>
     </section>
 
@@ -104,6 +108,8 @@
         <span class="chip">Tesseract OCR</span>
         <span class="chip">Piper TTS</span>
         <span class="chip">Vosk STT</span>
+        <span class="chip">Ollama</span>
+        <span class="chip">LLaVA</span>
         <span class="chip">Linux audio</span>
         <span class="chip">Local-first accessibility</span>
       </div>
@@ -112,15 +118,15 @@
     <section class="section">
       <h2>Current Status</h2>
       <div class="status">
-        <div class="card"><strong>Implemented</strong><ul><li>Pointer reading</li><li>Full-monitor reading</li><li>Push-to-talk command path</li><li>Offline speech output</li><li>Stop/cancel flow</li></ul></div>
+        <div class="card"><strong>Implemented</strong><ul><li>Pointer reading</li><li>Full-monitor reading</li><li>Manual region selection</li><li>Local selected-region visual explanation</li><li>Push-to-talk command path</li><li>Offline speech output</li><li>Stop/cancel flow</li></ul></div>
         <div class="card"><strong>In Progress</strong><ul><li>Highlighted-text reliability</li><li>Explanation source diagnostics</li><li>Representative app testing</li><li>More natural voice behavior</li></ul></div>
-        <div class="card"><strong>Planned</strong><ul><li>Local visual explanation audit</li><li>Spreadsheet error assistance</li><li>Approval-gated corrections</li></ul></div>
+        <div class="card"><strong>Planned</strong><ul><li>Spreadsheet error assistance</li><li>Approval-gated corrections</li><li>Broader visual confidence scoring</li></ul></div>
       </div>
     </section>
 
     <section class="section">
       <h2>Future Direction</h2>
-      <p>The next milestone is to audit the live capture pipeline for explanation commands. If text sources remain insufficient, the project will evaluate a free local image-understanding adapter before accepting broad visual explanation as reliable.</p>
+      <p>The next milestone is to harden selected-region explanation across more real software and add clearer confidence reporting when Luna is inferring from visual context. Broader full-screen explanation and approval-gated assistance remain future work.</p>
     </section>
   </main>
 </body>
