@@ -18,6 +18,7 @@ This repository is a public-facing portfolio summary. It does not include privat
 - Privacy-first cleanup of temporary audio and capture files.
 - Drag-to-select context targeting for precise screen regions.
 - Local visual explanation using an offline Ollama/LLaVA model when OCR is not enough.
+- Selected-region spreadsheet math for totals, averages, counts, minimum, maximum, and range.
 - Local explanation diagnostics that distinguish OCR, semantic text, and image context.
 
 ## User Problem
@@ -51,6 +52,8 @@ Working capabilities:
 - Visible pointer-region overlay.
 - Manual drag-to-select region capture.
 - Selected-region visual explanation through local Ollama/LLaVA.
+- Selected spreadsheet math from visible cells.
+- Selected image and poster explanation through local vision.
 - Local OCR fallback.
 
 ## First Demo Video
@@ -64,7 +67,8 @@ This is an early proof recording, not a polished product video. It demonstrates 
 Current known limitation:
 
 - Highlighted-text reading is implemented but still unreliable in some Linux applications because selected text is not always exposed consistently through AT-SPI.
-- Selected-region visual explanation is now working locally, but accuracy is still being validated across more apps, screens, and image types. Luna reports what it can observe and may still misclassify unfamiliar applications.
+- Selected-region visual explanation is now working locally across text, app UI, spreadsheet regions, and image/poster examples, but accuracy is still being validated across more apps, screens, and image types. Luna reports what it can observe and may still misclassify unfamiliar applications.
+- Local model responses can have noticeable latency, especially for visual explanation.
 - Broad full-screen explanation remains less dependable than selected-region explanation because full-screen capture can include too much mixed context.
 
 ## Local Technology Stack
@@ -97,11 +101,12 @@ Luna Glass is designed around strict boundaries:
 
 1. Stabilize pointer and full-screen reading.
 2. Improve highlighted-text reliability.
-3. Expand selected-region visual explanation validation across browsers, Electron apps, media frames, documents, and spreadsheets.
-4. Improve explanation accuracy and source diagnostics while staying free/offline.
-5. Improve natural Luna voice quality while staying free/offline.
-6. Add read-only error detection.
-7. Add approval-gated corrective actions later.
+3. Improve response latency and user-visible capture/thinking/speaking status.
+4. Expand selected-region visual explanation validation across browsers, Electron apps, media frames, documents, and spreadsheets.
+5. Improve explanation accuracy and source diagnostics while staying free/offline.
+6. Improve natural Luna voice quality while staying free/offline.
+7. Add read-only error detection.
+8. Add approval-gated corrective actions later.
 
 ## Suggested Portfolio Description
 

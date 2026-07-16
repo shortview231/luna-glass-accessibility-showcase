@@ -8,7 +8,8 @@ Hotkey or voice command
   -> capture screen region or monitor
   -> prefer semantic accessibility text
   -> fallback to OCR
-  -> use local visual explanation for selected regions when text is weak
+  -> use local numeric analysis for selected spreadsheet regions
+  -> use local visual explanation for selected regions when image context is needed
   -> speak result with local TTS
   -> cleanup temporary artifacts
 ```
@@ -20,7 +21,8 @@ Hotkey or voice command
 - AT-SPI helpers: semantic app/control inspection.
 - OCR helpers: local Tesseract screen reading.
 - Selection overlay: manual drag-to-select context targeting.
-- Ollama/LLaVA helper: local visual explanation for selected regions when OCR is weak.
+- Spreadsheet analyzer: local selected-region numeric extraction for totals, averages, counts, minimums, maximums, and ranges.
+- Ollama/LLaVA helper: local visual explanation for selected regions when image context is needed.
 - TTS helpers: Piper voice output.
 - STT helpers: Vosk push-to-talk transcription.
 
@@ -42,9 +44,9 @@ Pointer and full-screen reading are the strongest current paths.
 
 Highlighted text is the most important near-term reliability gap because Linux applications vary in how they expose selected text through accessibility APIs.
 
-Selected-region visual explanation is now working locally through Ollama/LLaVA. The strongest explanation path is manual region selection because it gives Luna a precise target and avoids noisy full-screen context.
+Selected-region visual explanation is now working locally through Ollama/LLaVA. Selected-region spreadsheet math is also working locally for visible numeric cells. The strongest explanation path is manual region selection because it gives Luna a precise target and avoids noisy full-screen context.
 
-The remaining reliability work is representative-app validation. Luna can still misclassify unfamiliar software or infer incorrectly from visual context, so the system reports uncertainty and keeps action automation out of scope. Broad full-screen explanation remains less dependable than selected-region explanation because full-screen captures can include mixed windows, sidebars, media, and unrelated text.
+The remaining reliability work is latency reduction, status feedback polish, and representative-app validation. Luna can still misclassify unfamiliar software or infer incorrectly from visual context, so the system reports uncertainty and keeps action automation out of scope. Broad full-screen explanation remains less dependable than selected-region explanation because full-screen captures can include mixed windows, sidebars, media, and unrelated text.
 
 ## Demo Evidence
 
