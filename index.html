@@ -38,7 +38,7 @@
     <header>
       <div class="eyebrow">Accessibility Case Study</div>
       <h1>Luna Glass</h1>
-      <p class="lead">A local-first screen-reading and voice-assistance prototype for accessible computer use without paid cloud services.</p>
+      <p class="lead">A usable v1 local-first screen-reading, visual-explanation, spreadsheet-assistance, and voice-feedback subsystem for accessible computer use without paid cloud services.</p>
     </header>
 
     <section class="grid">
@@ -46,7 +46,7 @@
       <div class="card"><strong>Voice Commands</strong><p>Uses <code>Ctrl+Alt+M</code> for bounded push-to-talk commands through local Vosk speech recognition.</p></div>
       <div class="card"><strong>Visual Explanation</strong><p>Drag-selects a region and explains visible content locally with Ollama/LLaVA when OCR is not enough.</p></div>
       <div class="card"><strong>Spreadsheet Math</strong><p>Calculates totals, averages, counts, minimums, maximums, and ranges from selected visible cells.</p></div>
-      <div class="card"><strong>Offline Speech</strong><p>Speaks results locally with Piper TTS and supports immediate stop/cancel behavior.</p></div>
+      <div class="card"><strong>Offline Speech</strong><p>Speaks results locally with Piper TTS, selectable voices, saved voice profiles, and immediate stop/cancel behavior.</p></div>
     </section>
 
     <section class="section summary">
@@ -70,13 +70,13 @@
 
     <section class="section">
       <h2>Solution</h2>
-      <p>Luna Glass combines pointer-aware capture, drag-selected screen regions, Linux accessibility APIs, local OCR, local speech recognition, offline text-to-speech, spreadsheet math, and a local vision model into a bounded assistant workflow. The current accepted strength is dependable selected-region reading and explanation, with visual and spreadsheet workflows now working in live host tests.</p>
+      <p>Luna Glass combines pointer-aware capture, drag-selected screen regions, Linux accessibility APIs, local OCR, local speech recognition, offline text-to-speech, spreadsheet math, saved voice profiles, and a local vision model into a bounded assistant workflow. The current accepted strength is usable selected-region reading and explanation, with visual and spreadsheet workflows now working in live host tests.</p>
       <div class="flow">
         <div class="node"><span>Input</span>Hotkey or push-to-talk voice command.</div>
         <div class="node"><span>Target</span>Pointer region, current monitor, highlighted text, or drag-selected region.</div>
         <div class="node"><span>Read</span>AT-SPI semantic text first, OCR fallback when needed.</div>
         <div class="node"><span>Explain</span>Local Ollama/LLaVA visual fallback for selected regions when text extraction is weak.</div>
-        <div class="node"><span>Speak</span>Local Piper voice output with stop/cancel support.</div>
+        <div class="node"><span>Speak</span>Local Piper voice output with selected voice profiles and stop/cancel support.</div>
         <div class="node"><span>Cleanup</span>Temporary captures and audio are cleaned by default.</div>
       </div>
     </section>
@@ -107,6 +107,7 @@
         <li>Selected-region visual explanation with a local LLaVA model when OCR is insufficient.</li>
         <li>Selected spreadsheet math for totals, averages, counts, minimums, maximums, and ranges.</li>
         <li>Selected image and poster explanation using local visual context.</li>
+        <li>Local voice selector and saved voice profiles for Natural Luna, Clear Reader, Slow Accessibility, and Fast Assistant pacing.</li>
       </ul>
     </section>
 
@@ -131,6 +132,7 @@
         <span class="chip">Ollama</span>
         <span class="chip">LLaVA</span>
         <span class="chip">Linux audio</span>
+        <span class="chip">Voice profiles</span>
         <span class="chip">Local-first accessibility</span>
       </div>
     </section>
@@ -138,15 +140,15 @@
     <section class="section">
       <h2>Current Status</h2>
       <div class="status">
-        <div class="card"><strong>Implemented</strong><ul><li>Pointer reading</li><li>Full-monitor reading</li><li>Manual region selection</li><li>Local selected-region visual explanation</li><li>Selected spreadsheet math</li><li>Push-to-talk command path</li><li>Offline speech output</li><li>Stop/cancel flow</li></ul></div>
-        <div class="card"><strong>In Progress</strong><ul><li>Highlighted-text reliability</li><li>Response latency tuning</li><li>Microphone/status feedback polish</li><li>Representative app testing</li><li>More natural voice behavior</li></ul></div>
+        <div class="card"><strong>Implemented</strong><ul><li>Pointer reading</li><li>Full-monitor reading</li><li>Manual region selection</li><li>Local selected-region visual explanation</li><li>Selected spreadsheet math</li><li>Push-to-talk command path</li><li>Offline speech output</li><li>Voice selector and profiles</li><li>Stop/cancel flow</li></ul></div>
+        <div class="card"><strong>In Progress</strong><ul><li>Highlighted-text reliability</li><li>Response latency tuning</li><li>Global microphone/status feedback polish</li><li>Low-resolution OCR hardening</li><li>Representative app testing</li></ul></div>
         <div class="card"><strong>Planned</strong><ul><li>Spreadsheet error assistance</li><li>Approval-gated corrections</li><li>Broader visual confidence scoring</li></ul></div>
       </div>
     </section>
 
     <section class="section">
       <h2>Future Direction</h2>
-      <p>The next milestone is to reduce latency, improve user-visible status during capture and model processing, and continue hardening selected-region explanation across more real software. Approval-gated assistance remains future work.</p>
+      <p>The next milestone is to reduce latency, improve always-visible listening/thinking/speaking status, and continue hardening selected-region explanation across more real software. Luna Glass is now the first usable Lucid subsystem; the next broader Lucid step is to prepare Calendar as a second read-only subsystem before routing multiple tools through a lightweight Luna orchestrator. Approval-gated assistance remains future work.</p>
     </section>
   </main>
 </body>

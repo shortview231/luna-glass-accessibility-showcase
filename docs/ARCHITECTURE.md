@@ -10,7 +10,7 @@ Hotkey or voice command
   -> fallback to OCR
   -> use local numeric analysis for selected spreadsheet regions
   -> use local visual explanation for selected regions when image context is needed
-  -> speak result with local TTS
+  -> speak result with local TTS and selected voice profile
   -> cleanup temporary artifacts
 ```
 
@@ -23,7 +23,7 @@ Hotkey or voice command
 - Selection overlay: manual drag-to-select context targeting.
 - Spreadsheet analyzer: local selected-region numeric extraction for totals, averages, counts, minimums, maximums, and ranges.
 - Ollama/LLaVA helper: local visual explanation for selected regions when image context is needed.
-- TTS helpers: Piper voice output.
+- TTS helpers: Piper voice output, local voice selection, and saved pacing profiles.
 - STT helpers: Vosk push-to-talk transcription.
 
 ## Privacy Model
@@ -40,13 +40,14 @@ The system is designed to keep sensitive data local:
 
 ## Current Reliability Notes
 
-Pointer and full-screen reading are the strongest current paths.
+Luna Glass has reached a usable v1 boundary for read/explain workflows.
+Pointer reading, full-screen reading, manual selected-region explanation, selected image/poster explanation, spreadsheet math, push-to-talk, and local voice output are working.
 
 Highlighted text is the most important near-term reliability gap because Linux applications vary in how they expose selected text through accessibility APIs.
 
 Selected-region visual explanation is now working locally through Ollama/LLaVA. Selected-region spreadsheet math is also working locally for visible numeric cells. The strongest explanation path is manual region selection because it gives Luna a precise target and avoids noisy full-screen context.
 
-The remaining reliability work is latency reduction, status feedback polish, and representative-app validation. Luna can still misclassify unfamiliar software or infer incorrectly from visual context, so the system reports uncertainty and keeps action automation out of scope. Broad full-screen explanation remains less dependable than selected-region explanation because full-screen captures can include mixed windows, sidebars, media, and unrelated text.
+The remaining reliability work is latency reduction, always-visible microphone/listening/thinking/speaking status feedback, low-resolution OCR hardening, and representative-app validation. Luna can still misclassify unfamiliar software or infer incorrectly from visual context, so the system reports uncertainty and keeps action automation out of scope. Broad full-screen explanation remains less dependable than selected-region explanation because full-screen captures can include mixed windows, sidebars, media, and unrelated text.
 
 ## Demo Evidence
 
